@@ -1,0 +1,129 @@
+@font-face {
+    font-family: Adorsholipi;
+    src: url(./font/Adorsholipi.ttf);
+  }
+
+@font-face{
+    font-family: 'Adorsholipi' ;
+    src: url(./font/Adorsholipi.ttf);
+}
+body{
+    margin: 0px;
+    font-family: Adorsholipi ;
+    src: url(./font/Adorsholipi.ttf);
+    font-size: 14px;
+    
+    
+}
+
+#navbar{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    width: 100vw;
+    top: 0px;
+    background-color: white;
+    z-index: 100;
+    user-select: none;
+    color: brown;
+}
+.nav_item{
+    padding: 14px 10px;
+    font-size: 1.3em;
+    cursor: pointer;
+}
+.nav_item:hover{
+    border: 0px solid white;
+
+}
+.nav_right {
+    margin-right: 12px;
+   
+}
+.nav_left{
+    margin-left: 12px;
+   
+}
+#banner{
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+
+}
+#buddha{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#bannertxt{
+    text-align: center;
+}
+#bannertxt h3{
+    margin: 0px;
+}
+#bannertxt p{
+font-size: 10px;
+margin: 5px 0px;
+}
+#cattagory_wrap{
+    
+}
+ul{
+    margin-left: -40px;
+}
+.item .title{
+    background-color: brown;
+    color: white;
+    font: 600;
+    font-size: 18px;
+    margin: 5px 25px;
+    padding: 5px 10px;
+}
+.item .list{
+    list-style: none;
+    margin: 3px 25px;
+    border-bottom: 1px solid brown;
+    font-size: 16px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+.ourgoal{
+    position: fixed;
+    background-color: rgba(255, 255,255, 0.5);
+    color: white;
+    z-index: 3000;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+  
+}
+.ourgoal_box{
+    background: brown;
+    margin: 15% 10px;
+    padding: 20px 5px;
+    border-radius: 15px;
+}
+.ourgoal_box h1{
+    text-align: center;
+    border-bottom: 2px solid white;
+}
+.ourgoal_box p{
+    text-align: center;
+}
+.ourgoal_box .close{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.close i{
+    padding: 15px;
+    font-size: 20px;
+    background-color: white;
+    color: brown;
+    border-radius: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+}

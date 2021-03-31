@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    body{
+        margin: 0px;
+    }
+   
+</style>
+<body>
+    
+    <script>
+     const read = (drive_url) => {
+
+var onlineread = `
+                <div id="instantread">
+                    <div class="read_close" onclick="closeRead()">
+                        <i class="material-icons">close</i>
+                    </div>
+                    <iframe id="frame_read" src="${drive_url}"> </iframe>
+                </div>`
+var inBlogRead = `
+                    <div class="read_close" onclick="closeRead()">
+                        <i class="material-icons">close</i>
+                    </div>
+                    <iframe id="frame_read" src="${drive_url}"> </iframe>`
+var isOffline = `<p> মনে হয় আপনার নেট কানেক্টশনের সমস্যা হচ্ছে </p>`
+
+    try {
+        var instantread = document.getElementById('instantread')
+    } catch (error) {
+
+    }
+    if (!instantread) {
+        document.body.insertAdjacentHTML('afterbegin', onlineread)
+    } else if (instantread) {
+        var url = window.location.href
+        var blog = url.includes('/blog/')
+        if (blog) {
+            var lastopen = window.sessionStorage.getItem('lastopen')
+            if (lastopen === drive_url) {
+                document.getElementById('instantread').style.display = 'block'
+            } else {
+                instantread.innerHTML = inBlogRead
+            }
+
+        } else {
+            document.getElementById('instantread').style.display = 'block'
+        }
+        setTimeout(() => {
+            window.sessionStorage.setItem('lastopen', drive_url)
+        }, 2000)
+    } else {
+        alert('Something went wrong...')
+    }
+}
+const closeRead = () => {
+    document.getElementById('instantread').style.display = 'none'
+}
+
+            
+    </script>
+    <script src="https://kalpataruboi.org/wp-content/themes/kalpataruboi/js/onlineread.js"></script>
+</body>
+</html>

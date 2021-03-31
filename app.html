@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalpataruboi</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <!--load all styles -->
+    <link rel="stylesheet" href="./css/regular.css">
+    <link rel="stylesheet" href="./css/solid.css">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAA8ArM6hS-kZ5GYiR0xXdUT7B84wJ7lRc",
+            authDomain: "kalpataruboi-1a9a9.firebaseapp.com",
+            databaseURL: "https://kalpataruboi-1a9a9-default-rtdb.firebaseio.com",
+            projectId: "kalpataruboi-1a9a9",
+            storageBucket: "kalpataruboi-1a9a9.appspot.com",
+            messagingSenderId: "498273830254",
+            appId: "1:498273830254:web:d746abb5064cfac8326d7f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="nav_left" class="nav_left nav_item">
+            <span id="menu">
+                <i class="fas fa-bars"></i>
+            </span>
+
+        </div>
+        <div>
+            <p>Kalpataru E-Library</p>
+        </div>
+        <div id="nav_right" class="nav_right nav_item">
+            <span><i class="fas fa-search"></i></span>
+
+        </div>
+    </div>
+
+    <div id="banner">
+        <div id="buddha">
+            <img src="./icon/buddha-img.png" height="50px" width="40px" alt="">
+        </div>
+        <div id="bannertxt">
+            <h3>Kalpataru E-Library</h3>
+            <p>বৌদ্ধধর্মীয় বইয়ের বিশাল ভাণ্ডার<br>
+                সেই সঙ্গে থাকছে চাকমা সাহিত্য-সংস্কৃতি ও জ্ঞান-বিজ্ঞানের নানান বই</p>
+        </div>
+    </div>
+
+    <div id="cattagory_wrap">
+        <ul class="item bd">
+            <p class="title">বাংলা ই-বুক</p>
+            <li class="list" id="tp25">০১. পবিত্র ত্রিপিটক (২৫ খণ্ড)</li>
+            <li class="list" id="tpbangla">০২. মূল ত্রিপিটক (বাংলা)</li>
+            <li class="list" id="tpatthakata">০৩. অর্থকথা (বাংলা)</li>
+            <li class="list" id="palitobangla">০৪. পালি থেকে অনূদিত বই</li>
+            <li class="list" id="engtobangla">০৫. ইংরেজি থেকে অনূদিত বই</li>
+            <li class="list" id="abhidhamma">০৬. অভিধর্ম বিষয়ক বই</li>
+            <li class="list" id="vabona">০৭. ভাবনা বিষয়ক বই</li>
+            <li class="list" id="gobeshona">০৮. গবেষণামূলক ধর্মীয় বই</li>
+            <li class="list" id="jiboni">০৯. বৌদ্ধ জীবনীমূলক বই</li>
+            <li class="list" id="banabhante"> ১০. বনভন্তে বিষয়ক বই</li>
+            <li class="list" id="sankalita">১১. সংকলিত ধর্মীয় বই</li>
+            <li class="list" id="others">১২. অন্যান্য বৌদ্ধধর্মীয় বই</li>
+            <li class="list" id="smaranmika">১৩. স্মরণিকা ও ম্যাগাজিন (ধর্মীয়)</li>
+            <li class="list" id="paligrammer">১৪. পালি ব্যাকরণ ও ভাষা শিক্ষার বই</li>
+            <li class="list" id="mixbangla">১৫. মিক্স পিডিএফ বই (বাংলা)</li>
+
+        </ul>
+        <ul class="item cht">
+            <p class="title">চাকমা ইতিহাস ও ঐতিহ্য</p>
+            <li class="list" id="chdictionary">চাকমা ডিকশিনারি</li>
+            <li class="list" id="chdhamma">চাকমা ধর্ম বই</li>
+            <li class="list" id="chlegai">চাকমা লেখায় লিখিত বই</li>
+            <li class="list" id="chshishu">শিশুতোষ ও শিক্ষামূলক বই</li>
+            <li class="list" id="chsmarok">স্মারক ও সংকলন গ্রন্থ</li>
+            <li class="list" id="chatmajiboni">আত্মজীবনী ও স্মৃতিকথা</li>
+            <li class="list" id="chitihas">ইতিহাস বিষয়ক বই</li>
+            <li class="list" id="chgobeshona">গবেষণামূলক বই</li>
+            <li class="list" id="chkobita">চাকমা কবিতার বই</li>
+            <li class="list" id="chgolpa">চাকমা গল্প-উপন্যাস</li>
+
+        </ul>
+        <ul class="item pali">
+            <p class="title">পালি ই-বুক</p>
+            <li class="list" id="palimula">Tipitaka Mula Pali</li>
+            <li class="list" id="paliattha">Atthakatha Pali</li>
+            <li class="list" id="palithika">Tika Pali</li>
+            <li class="list" id="paliother">Others Pali</li>
+
+        </ul>
+        <ul class="item en">
+            <p class="title">ইংরেজি ই-বুক</p>
+            <li class="list" id="entobn">Translated E-Books</li>
+            <li class="list" id="enmeditation">Meditation E-Books</li>
+            <li class="list" id="enabhidhamma">Abhidhamma E-Books</li>
+            <li class="list" id="engenaral">General Buddhist E-Books</li>
+
+        </ul>
+
+    </div>
+
+    <script>
+        var list = document.querySelectorAll('.list')
+        function app(){
+            return 10
+        }
+        function isAndroid(){
+            var ua = navigator.userAgent;
+                if ((ua.match(/Android/i))) {
+                    return true
+                }else{
+                    return false
+                }
+        }
+        list.forEach((el) => {
+            el.onclick = (e) => {
+                window.localStorage.setItem('link', e.target.id)
+               // window.open(`./booklist.html`)
+                // Android.booklist(`${e.target.id}`)
+                Android.booklist('https://siilavanta.github.io/pbd/about.html')
+                if(isAndroid()){
+                    alert('android')
+                }else{
+                    alert('web')
+                }
+                
+            }
+        })
+    </script>
+
+    <div class="ourgoal">
+        <div class="ourgoal_box">
+            <h1>Our Aim and Goal</h1>
+            <p>“কল্পতরু” একটি বৌদ্ধ ধর্মীয় প্রকাশনা সংস্থা। ৮ নভেম্বর ২০১৩ খ্রিষ্টাব্দে “হৃদয়ের দরজা খুলে দিন“ বইটি
+                প্রকাশের মধ্য দিয়ে “কল্পতরু”-র যাত্রা শুরু হলেও অনলাইনে প্রথম আত্মপ্রকাশ ঘটে ২৪ ডিসেম্বর ২০১৪
+                খ্রিষ্টাব্দে। “কল্পতরু” বাঁধাই করা বই ছাপানোর পাশাপাশি অনলাইনে পিডিএফ আকারে ই-বুক প্রকাশসহ আরো অন্যান্য
+                মাধ্যমেও বিশ্বব্যাপী বাংলাভাষীদের মাঝে বৌদ্ধধর্মীয় জ্ঞান ছড়িয়ে দিতে বদ্ধপরিকর। সামগ্রিকভাবে “কল্পতরু”-র
+                লক্ষ্য ও উদ্দেশ্য হচ্ছে বিশ্বায়নের যুগে পৃথিবীর নানা প্রান্তে ছড়িয়ে ছিটিয়ে থাকা ধর্মপ্রাণ জ্ঞানান্বেষী
+                মানুষদের হাতের নাগালের মধ্যে “বৌদ্ধ ধর্মীয় জ্ঞানের ভাণ্ডার” পৌঁছে দেওয়া এবং সহজলভ্য করে দেওয়া।
+                “কল্পতরু”-র বৌদ্ধধর্মীয় জ্ঞানের ভাণ্ডারে প্রতিটি ধর্মপ্রাণ জ্ঞানান্বেষী মানুষকে জানাই সুস্বাগতম!!!</p>
+            <p class="close"><i class="fas fa-times close"></i></p>
+        </div>
+
+    </div>
+
+    <!-- <style>
+        .book {
+            display: flex;
+            flex-direction: column;
+            margin: 0px 5px;
+            border: 1px solid brown;
+
+        }
+
+        .book_about {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+
+            height: auto;
+            font-size: 12px;
+        }
+
+
+        .head p {
+            padding: 5px 0px;
+            text-align: center;
+
+            border-bottom: 1px solid brown;
+            margin: 0px;
+        }
+
+        table {
+            border-collapse: collapse;
+
+        }
+
+        td,
+        th {
+            text-align: left;
+        }
+
+        .read_download {
+            background-color: brown;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            color: white;
+            margin: 5px 0px;
+        }
+
+        .read_download div {
+            padding: 5px 10px;
+        }
+    </style>
+
+
+
+    <div class="book">
+        <div class="book_about">
+            <div class="img_box">
+                <img id="img_box" height="152px" src="./img/mn1.jpg" alt="">
+            </div>
+            <div class="about">
+                <div class="head">
+                    <p> কিছু তথ্য</p>
+                </div>
+                <div class="about_txt">
+                    <table>
+                        <tr>
+                            <td>বই</td>
+                            <td>:</td>
+                            <td>মধ্যম নিকায় ১ম খণ্ড</td>
+                        </tr>
+                        <tr>
+                            <td>পৃষ্ঠা</td>
+                            <td>:</td>
+                            <td>৩৯৬ পৃষ্ঠা</td>
+                        </tr>
+                        <tr>
+                            <td>অনুবাদক</td>
+                            <td>:</td>
+                            <td> শ্রী বেণীমাধব বড়ুয়া</td>
+                        </tr>
+                        <tr>
+                            <td>প্রকাশকাল </td>
+                            <td>:</td>
+                            <td>২৪৮৩ বুদ্ধাব্দ, ১৯৪০ খৃষ্টাব্দ ।</td>
+                        </tr>
+                        <tr>
+                            <td>আকার</td>
+                            <td>:</td>
+                            <td>২৩ মেগাবাইট</td>
+                        </tr>
+                        <tr>
+                            <td>ডাউনলোড সংখ্যা</td>
+                            <td>:</td>
+                            <td>৯৮০ বার</td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="read_download">
+            <div class="read">পড়ে দেখুন</div>
+            <div class="download">ডাউনলোড</div>
+
+        </div>
+    </div>
+ -->
+
+
+
+
+    <script src="./app.js"></script>
+    <script>
+        var about = document.querySelector('.about')
+        var ah = about.clientHeight
+        var img_box = document.getElementById('img_box')
+        console.log(ah)
+
+    </script>
+</body>
+
+</html>

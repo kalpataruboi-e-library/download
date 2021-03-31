@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পবিত্র ত্রিপিটক</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <!--load all styles -->
+    <link rel="stylesheet" href="./css/regular.css">
+    <link rel="stylesheet" href="./css/solid.css">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="./js/firebaseconfig.js"></script>
+    <script src="./insertbook.js"></script>
+    <script src="./above25mb.js"></script>
+</head>
+<style>
+    .tipibn{
+        margin: 70px 0px ;
+        
+    }
+    .title{
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+        padding: 10px 0px;
+        color: brown;
+        border-bottom: 1px solid brown;
+    }
+    .bookname{
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+      
+        margin-bottom: 1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+    .bookname span{
+        padding: 10px;
+       
+    }
+</style>
+<body>
+    <div class="main">
+        <div id="navbar">
+            <div id="nav_left" class="nav_left nav_item">
+                <span id="menu">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+
+            </div>
+            <div>
+                <p id="booklist_title"></p>
+            </div>
+            <div id="nav_right" class="nav_right nav_item">
+                <!-- <span><i class="fas fa-search"></i></span> -->
+
+            </div>
+        </div>
+
+        <div class="tipibn">
+            <div id="vin">
+                <div class="title_vin title"></div>
+                <div id="vinbook">
+                </div>
+            </div>
+            <div id="sutta">
+                <div class="title_sutta title"></div>
+                <div id="suttabook"></div>
+            </div>
+            <div id="abhi">
+                <div class="title_abhi title"></div>
+                <div id="abhibook"></div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./mulatipibn.js"></script>
+</body>
+</html>

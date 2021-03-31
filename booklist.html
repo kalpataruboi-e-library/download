@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalpataruboi</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <!--load all styles -->
+    <link rel="stylesheet" href="./css/regular.css">
+    <link rel="stylesheet" href="./css/solid.css">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAA8ArM6hS-kZ5GYiR0xXdUT7B84wJ7lRc",
+            authDomain: "kalpataruboi-1a9a9.firebaseapp.com",
+            databaseURL: "https://kalpataruboi-1a9a9-default-rtdb.firebaseio.com",
+            projectId: "kalpataruboi-1a9a9",
+            storageBucket: "kalpataruboi-1a9a9.appspot.com",
+            messagingSenderId: "498273830254",
+            appId: "1:498273830254:web:d746abb5064cfac8326d7f"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+    </script>
+
+    <script>
+        var path = './product/'
+        var link = path + window.localStorage.getItem('link') + '.js'
+        var script = document.createElement('script')
+        script.src = link;
+        document.head.appendChild(script)
+
+    </script>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="nav_left" class="nav_left nav_item">
+            <span id="menu">
+                <i class="fas fa-arrow-left"></i>
+            </span>
+
+        </div>
+        <div>
+            <p id="booklist_title"></p>
+        </div>
+        <div id="nav_right" class="nav_right nav_item">
+            <!-- <span><i class="fas fa-search"></i></span> -->
+
+        </div>
+    </div>
+<script>
+    var nav_left = document.getElementById('nav_left')
+
+    nav_left.onclick = ()=>{
+        window.close()
+        window.history.back()
+        Android.close()
+        //window.location.replace('app.html')
+    }
+</script>
+</body>
+
+</html>
