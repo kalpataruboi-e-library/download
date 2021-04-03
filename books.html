@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>পবিত্র ত্রিপিটক</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <!--load all styles -->
+    <link rel="stylesheet" href="./css/regular.css">
+    <link rel="stylesheet" href="./css/solid.css">
+    <link rel="stylesheet" href="./css/fontawesome.css">
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="./js/firebaseconfig.js"></script>
+    <script src="./insertbook.js"></script>
+    <script src="./above25mb.js"></script>
+    <script src="./bookname.js"></script>
+
+</head>
+<style>
+    .tipibn {
+        margin: 30px 0px;
+
+    }
+
+    .title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 22px;
+        padding: 10px 0px;
+        color: brown;
+
+    }
+
+    .bookname {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+
+        margin-bottom: 1px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+    .bookname span {
+        padding: 10px;
+
+    }
+</style>
+
+<body>
+    <div class="main">
+
+        <div class="tipibn">
+            <div id="vin">
+                <div class="title_vin title"></div>
+                <div id="vinbook">
+                </div>
+            </div>
+            <div id="sutta">
+                <div class="title_sutta title"></div>
+                <div id="suttabook"></div>
+            </div>
+            <div id="abhi">
+                <div class="title_abhi title"></div>
+                <div id="abhibook"></div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var url = window.location.hash
+        //var targetid = url.includes('mixbangla')
+        var hashbook = new String(url)
+        var container = document.querySelector('.tipibn')
+        if (url) {
+            console.log(hashbook.replace('#', ''))
+            var route = hashbook.replace('#', '')
+            var ch_or_pali = route.includes('ch' || 'pali')
+            if (route.includes('tp25') && !ch_or_pali) {
+                insertbook2(container, bookall.tp25, '01.Pobitro_Tripitak_25_Khandha', 'tp25')
+
+            } 
+            else if (route.includes('tpbangla') && !ch_or_pali) {
+                tree()
+            } else if (route.includes('tpatthakata') && !ch_or_pali) {
+                insertbook2(container, bookall.tpatthakata, '03.Atthakatha_Bangla', 'tpatthakata')
+                
+            }
+            else if (route.includes('palitobangla') && !ch_or_pali) {
+                insertbook2(container, bookall.palitobangla, '04.Pali_Theke_Anudito_Boi', 'palitobangla')
+                
+                get25('বিশুদ্ধিমার্গ by ড. রেবতপ্রিয় বড়ুয়া.pdf', 'https://drive.google.com/file/d/1As8560iwJ3mmwjpc6TvYXW_PB8F-VYfV/view')
+            }
+            else if (route.includes('engtobangla') && !ch_or_pali) {
+                insertbook2(container, bookall.engtobangla, '05.Engregi_Theke_Anudito_Boi', 'engtobangla')
+                
+            }
+            else if (route.includes('abhidhamma') && !ch_or_pali) {
+                insertbook2(container, bookall.abhidhamma, '06.Abhidharma_Bishayok_Boi', 'abhidhamma')
+                
+            }
+            else if (route.includes('vabona') && !ch_or_pali) {
+                insertbook2(container, bookall.vabona, '07.Bhabona_Bishayok_Boi', 'vabona')
+                
+            } else if (route.includes('gobeshona') && !ch_or_pali) {
+                insertbook2(container, bookall.gobeshona, '08.Gobeshonamulok_Dharmiyo_Boi', 'gobeshona')
+                
+                get25('বোধিসত্ত্বাবদান-কল্পলতা By রায় শ্রীশরচ্চন্দ্র দাস বাহাদুর.pdf', 'https://drive.google.com/file/d/13Xgom6TArtmDq5lJW57MPshwme_agsPk/view')
+                get25('গৌতম বুদ্ধ by অমল বড়ুয়া.pdf', 'https://drive.google.com/file/d/1F4AKe8fg6hfRJYQx27UTJ-Q49-U0ixRl/view')
+                get25('ধর্মদর্শন By প্রমোদবন্ধু সেনগুপ্ত.pdf', 'https://drive.google.com/file/d/1cBU-ZNA1RmXEIKpmyg6fRe7Aypr11xq3/view')
+                get25('চর্যাপদ - তাত্ত্বিক সমস্যা by শামসুল আলম সাঈদ.pdf', 'https://drive.google.com/file/d/1NpJjw8TPmYuSeHC1CqFoZEGN_64MamL7/view')
+                get25('বৌদ্ধ সভ্যতা ও বৌদ্ধকীর্তি দেশে দেশে By  জ্যোতি বিকাশ বড়ুয়া.pdf','https://drive.google.com/file/d/1Pb1rWruvLyX1elhUgpzpbuD9Iu9ma3SQ/view')
+
+            }
+            else if (route.includes('jiboni') && !ch_or_pali) {
+                insertbook2(container, bookall.jiboni, '09.Bauddha_Jibonimulok_Boi', 'jiboni')
+                
+            }
+            else if (route.includes('banabhante') && !ch_or_pali) {
+                insertbook2(container, bookall.banabhante, '10.Banabhante_Bishayok_Boi', 'banabhante')
+                
+            }
+            else if (route.includes('sankalita') && !ch_or_pali) {
+                insertbook2(container, bookall.sankalita, '11.Sonkalita_Dharmiyo_Boi', 'sankalita')
+                
+            }
+            else if (route.includes('others') && !ch_or_pali) {
+                insertbook2(container, bookall.others, '12.Anyanno_Bauddhadharmiyo_Boi', 'others')
+                
+                get25('সচিত্র বৌদ্ধ তীর্থ পরিক্রমা by ড. বরসম্বোধি ভিক্ষু.pdf', 'https://drive.google.com/file/d/1YXE3bFZM1xlm0zcrHDOzdONXuYVbRbYp/view')
+                get25('সদ্ধর্ম পরিচিতি by তেমিয়ব্রত বড়ুয়া.pdf', 'https://drive.google.com/file/d/15Lqaz03DGxsVC5FRfoMQJFvdi3OfQSA6/view')
+            }
+            else if (route.includes('smaranmika') && !ch_or_pali) {
+                insertbook2(container, bookall.smaranmika, '13.Smaranika_Myagajin_Dharmiyo', 'smaranmika')
+                
+                get25('বনভন্তে জন্মস্মারক ২০১৩.pdf', 'https://drive.google.com/file/d/1VxF3-KP6aR-dfkvNMiGmLPzv02T-t1IK/view')
+            }
+            else if (route.includes('paligrammer') && !ch_or_pali) {
+                insertbook2(container, bookall.paligrammer, '14.Pali_Byakaran_O_Bhasha_Shiksha_Boi', 'paligrammer')
+                
+                get25('পালি-বাংলা অভিধান (১ম খণ্ড) by শান্তরক্ষিত মহাস্থবির.pdf', 'https://drive.google.com/file/d/16QQe64pqooN7CuKtE_ZYZ6LJ-sK9sfOV/view')
+                get25('পালি-বাংলা অভিধান (২য় খণ্ড) By  শান্তরক্ষিত মহাস্থবির.pdf', 'https://drive.google.com/file/d/1BZlL0rXS0H3iWavKlXgC7ti5HFw_N00F/view')
+            }
+            else if (route.includes('mixbangla') && !ch_or_pali) {
+                insertbook2(container, bookall.mixbangla, '15.Mixed_pdf_Books_Bangla', 'mixbangla')
+                
+                get25('হস্তরেখা বিজ্ঞান by শ্রীভৈরব শাস্ত্রী.pdf', 'https://drive.google.com/file/d/12v4cmq4zN9sHfYzuXZMmSKl213qQPcof/view')
+            }
+
+            //// Chakma books start
+            else if (route.includes('chatmajiiboni')) {
+                insertbook3(container, bookall.chatmajiiboni, '001.Atmajeebonee_O_Smriti', 'chatmajiiboni')
+                
+            }
+            else if (route.includes('chitihas')) {
+                insertbook3(container, bookall.chitihas, '002.Itihas_Bishayok_Boi', 'chitihas')
+                
+            }
+            else if (route.includes('chgobeshona')) {
+                insertbook3(container, bookall.chgobeshona, '003.Gobeshonamulok_Boi', 'chgobeshona')
+                get25('জীবন আমাদের নয়.pdf', 'https://drive.google.com/file/d/1cY23Jn4Sji8OvQLWHKO8JiO4Fkci_FPt/view')
+            }
+            else if (route.includes('chkobita')) {
+                insertbook3(container, bookall.chkobita, '004.Chakma_Kobita_Boi', 'chkobita')
+                
+            }
+            else if (route.includes('chgolpa')) {
+                insertbook3(container, bookall.chgolpa, '005.Chakma_Golpa_Uponyas', 'chgolpa')
+                
+            }
+            else if (route.includes('chdictionary')) {
+                insertbook3(container, bookall.chdictionary, '006.Chakma_Dictionary', 'chdictionary')
+                get25('চাকমা ডিকশনারি by পুলিন বয়ন চাকমা.pdf', 'https://drive.google.com/file/d/1JPUlIjMa6IkI2TSYTFf_GO0TVZd7CuCi/view')
+                get25('চাকমা ভাষার শব্দকোষ by অশোক কুমার দেওয়ান.pdf','https://drive.google.com/file/d/1Nx1peNynCY9PlogWmi-6EW2hSpY7jBi3/view')
+            }
+            else if (route.includes('chdhamma')) {
+                insertbook3(container, bookall.chdhamma, '007.Chakma_Dharmo_Boi', 'chdhamma')
+                
+            }
+            else if (route.includes('chlegai')) {
+                insertbook3(container, bookall.chlegai, '008.Chakma_Lekhai_Likhito_Boi', 'chlegai')
+                get25('চাঙমা পত্থম পাঠ (উসাই).pdf', 'https://drive.google.com/file/d/13aqvpE15LuNYspRSbKngJcmIKnHr1NBm/view')
+                get25('চাকমা মন্ত্রের বই-১.pdf', 'https://drive.google.com/file/d/10y8QwGuCK0BpE9oqekdpNPNbELTTvitJ/view')
+            }
+            else if (route.includes('chshishu')) {
+                insertbook3(container, bookall.chshishu, '009.Shishutosh_O_Shikshamulok_Boi', 'chshishu')
+                
+            }
+            else if (route.includes('chsmarok')) {
+                insertbook3(container, bookall.chsmarok, '010.Smarok_O_Songkalon_Grantha', 'chsmarok')
+                
+            }
+        } else {
+            console.log('not')
+        }
+
+        var k = Object.keys(bookall)
+        //console.log(bookall[`${k[20]}`])
+
+        function tree() {
+            var title_vin = document.querySelector('.title_vin')
+            var title_sutta = document.querySelector('.title_sutta')
+            var title_abhi = document.querySelector('.title_abhi')
+
+            title_vin.innerHTML = 'বাংলা ত্রিপিটক (বিনয়পিটক)'
+            title_sutta.innerHTML = 'বাংলা ত্রিপিটক (সূত্রপিটক)'
+            title_abhi.innerHTML = 'বাংলা ত্রিপিটক (অভিধর্মপিটক)'
+
+            var vinbook = document.getElementById('vinbook')
+            var suttabook = document.getElementById('suttabook')
+            var abhibook = document.getElementById('abhibook')
+
+
+
+            insertbook(vinbook, bookall.tpbangla[0].vin, 'Vinayapitaka', '02.Mul_Tripitak_Bangla')
+            insertbook(suttabook, bookall.tpbangla[0].sutta, 'Suttapitaka', '02.Mul_Tripitak_Bangla')
+            insertbook(abhibook, bookall.tpbangla[0].abhi, 'Abhidhammapitaka', '02.Mul_Tripitak_Bangla')
+
+
+            get25('পারাজিকা by বুদ্ধবংশ ভিক্ষু.pdf', 'https://drive.google.com/file/d/1V4WcKpoqwfvaW9di9LeaXP-LOz6ZMQZq/view')
+            get25('মহাবর্গ by প্রজ্ঞানন্দ স্থবির.pdf', 'https://drive.google.com/file/d/10mzhqGEzRIE6fPYQhh1SnOpXUBFjBkD6/view')
+            get25('বিশুদ্ধ মজ্ঝিমনিকায় by সাধনকমল চৌধুরী.pdf', 'https://drive.google.com/file/d/1bYvltp3oC0Qucr4ypLeoyWRucCOxje1w/view')
+            get25('জাতক (১ম খণ্ড) by ঈশানচন্দ্র ঘোষ.pdf', 'https://drive.google.com/file/d/1rnycb4BJ-gNVEqIEhThx62dC8gOq48xj/view')
+            get25('দীর্ঘনিকায় (অখণ্ড) by ভিক্ষু শীলভদ্র.pdf', 'https://drive.google.com/file/d/1Mv6ZzZZBWgQZYenJQI0Vucj3g_TYkpOM/view')
+            get25('অঙ্গুত্তর নিকায় ৪র্থ খণ্ড By  অধ্যাপক সুমঙ্গল বড়ুয়া.pdf', 'https://drive.google.com/file/d/1rebQMb_vpPNQZkODoiH2iSY3w6sKBCYG/view')
+            get25('জাতক (৬ষ্ঠ খণ্ড) by ঈশানচন্দ্র ঘোষ.pdf', 'https://drive.google.com/file/d/1g35rM8dIeJfNg44_QYlSXM1XRNRb9Xad/view')
+
+
+        }
+    </script>
+</body>
+
+</html>
