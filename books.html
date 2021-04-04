@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>পবিত্র ত্রিপিটক</title>
+    <title></title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/all.css">
     <!--load all styles -->
@@ -26,6 +26,9 @@
 
     }
 
+h3{
+    margin: 10px 6px;
+}
     .title {
         text-align: center;
         font-weight: bold;
@@ -48,12 +51,18 @@
         padding: 10px;
 
     }
+    @media screen and (min-width: 700px) {
+            .main {
+                margin: 10px 27%;
+            }
+        }
 </style>
 
 <body>
     <div class="main">
-
+        <h3 id="booksTitle"></h3>
         <div class="tipibn">
+           
             <div id="vin">
                 <div class="title_vin title"></div>
                 <div id="vinbook">
@@ -73,6 +82,11 @@
     <script>
         var url = window.location.hash
         //var targetid = url.includes('mixbangla')
+        var urlsplit = url.split('_')
+        console.log(urlsplit)
+        document.querySelector('#booksTitle').innerHTML = decodeURI(urlsplit[urlsplit.length -1])
+        document.querySelector('title').innerHTML = decodeURI(urlsplit[urlsplit.length -1])
+
         var hashbook = new String(url)
         var container = document.querySelector('.tipibn')
         if (url) {
@@ -212,7 +226,6 @@
             var vinbook = document.getElementById('vinbook')
             var suttabook = document.getElementById('suttabook')
             var abhibook = document.getElementById('abhibook')
-
 
 
             insertbook(vinbook, bookall.tpbangla[0].vin, 'Vinayapitaka', '02.Mul_Tripitak_Bangla')
