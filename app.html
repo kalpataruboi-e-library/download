@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalpataruboi</title>
+    <title>kalpataruboi-e-library</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./css/all.css">
     <!--load all styles -->
@@ -32,6 +32,18 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
+
+    <style>
+        body {
+            margin: auto;
+        }
+
+        @media screen and (min-width: 700px) {
+            #cattagory_wrap {
+                margin: 10px 27%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -94,13 +106,13 @@
             <li class="list" id="chlegai">চাকমা লেখায় লিখিত বই</li>
             <li class="list" id="chshishu">শিশুতোষ ও শিক্ষামূলক বই</li>
             <li class="list" id="chsmarok">স্মারক ও সংকলন গ্রন্থ</li>
-            
-           
+
+
 
         </ul>
- 
 
-        <ul class="item pali">
+
+        <ul style="display: none;" class="item pali">
             <p class="title">পালি ই-বুক</p>
             <li class="list" id="palimula">Tipitaka Mula Pali</li>
             <li class="list" id="paliattha">Atthakatha Pali</li>
@@ -108,7 +120,7 @@
             <li class="list" id="paliother">Others Pali</li>
 
         </ul>
-        <ul class="item en">
+        <ul style="display: none;" class="item en">
             <p class="title">ইংরেজি ই-বুক</p>
             <li class="list" id="entobn">Translated E-Books</li>
             <li class="list" id="enmeditation">Meditation E-Books</li>
@@ -121,34 +133,39 @@
 
     <script>
         var list = document.querySelectorAll('.list')
-        function app(){
+        function app() {
             return 10
         }
-        function isAndroid(){
+        function isAndroid() {
             var ua = navigator.userAgent;
-                if ((ua.match(/Android/i))) {
-                    return true
-                }else{
-                    return false
-                }
+            if ((ua.match(/Android/i))) {
+                return true
+            } else {
+                return false
+            }
         }
         list.forEach((el) => {
             el.onclick = (e) => {
-               // window.localStorage.setItem('link', e.target.id)
+                // window.localStorage.setItem('link', e.target.id)
                 ///window.open(`./books.html#${e.target.id}`)
                 // Android.booklist(`${e.target.id}`)
                 //Android.booklist('./mulatipibn.html'
-                if(isAndroid()){
-                   try {
-                    Android.booklist(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id}`)
-                   } catch (error) {
-                      window.open(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id}`) 
-                   }
-                }else{
-                    window.open(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id}`) 
+                window.localStorage.setItem('booksTitle', e.target.textContent)
+                if (isAndroid()) {
 
+                    try {
+                        Android.booklist(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id + '_' + e.target.textContent}`,)
+
+                    } catch (error) {
+                        window.open(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id + '_' + e.target.textContent}`,)
+
+                    }
+                } else {
+                    // window.open(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id}`)
+                    window.open(`https://kalpataruboi-e-library.github.io/download/books.html#${e.target.id + '_' + e.target.textContent}`,)
+                    console.log(e.target.id + e.target.textContent)
                 }
-                
+
             }
         })
     </script>
@@ -280,10 +297,10 @@
 
     <script src="./app.js"></script>
     <script>
-        var about = document.querySelector('.about')
-        var ah = about.clientHeight
-        var img_box = document.getElementById('img_box')
-        console.log(ah)
+        // var about = document.querySelector('.about')
+        // var ah = about.clientHeight
+        // var img_box = document.getElementById('img_box')
+        // console.log(ah)
 
     </script>
 </body>
