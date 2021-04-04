@@ -1,4 +1,5 @@
 function insertbook(pitaka, booklist, path, mainpath) {
+   
     var arr = []
     for (var i = 0; i < booklist.length; i++) {
         arr.push(`<div id="${booklist[i]}" class="bookbox">
@@ -15,6 +16,7 @@ function insertbook(pitaka, booklist, path, mainpath) {
 }
 
 function insertbook2 (pitaka, booklist, mainpath, id){
+   
     var arr = []
     for (var i = 0; i < booklist.length; i++) {
         arr.push(`<div id="${id + i}" class="bookbox">
@@ -31,6 +33,8 @@ function insertbook2 (pitaka, booklist, mainpath, id){
 }
 
 function insertbook3 (pitaka, booklist, mainpath, id){
+   
+    
     var arr = []
     for (var i = 0; i < booklist.length; i++) {
         arr.push(`<div id="${id + i}" class="bookbox">
@@ -44,4 +48,5 @@ function insertbook3 (pitaka, booklist, mainpath, id){
   
     //https://github.com/kalpataruboi/03.Atthakatha_Bangla/raw/master/bookname.pdf
     pitaka.innerHTML = arr.join(' ')
+    
 }
